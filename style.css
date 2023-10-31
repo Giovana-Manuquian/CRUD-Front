@@ -1,17 +1,25 @@
 /* Estilize como desejar */
 body {
     font-family: Arial, sans-serif;
-    background-color: #7e7979;
+    background-color: #000000;
     text-align: center;
-    padding: 20px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   
+}
+
+nav {
+    color: azure;
+    font-size: large;
 }
 
 .card {
     background-color: #fff;
     border: 1px solid #ffffff;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px;
     margin: 10px;
     display: inline-block;
     width: 300px;
@@ -24,10 +32,78 @@ body {
     height: auto;
 }
 
-.favorite-button {
+.favorite-button{
     background-color: #3be74c;
     color: #fff;
     padding: 5px 10px;
     border: none;
     cursor: pointer;
+    width: 40%;
+}
+
+.favorite-button-No{
+    background-color: #e78b3b;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+
+.button {
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    justify-content: flex-end;
+    align-items: flex-end;
+    
+}
+
+.gridButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.buttonAdd {
+    background-color: #3061de;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    border: azure solid 2px;
+    color: azure;
+    padding: 10px;
+    font-size: x-large;
+    cursor: cell;
+    margin-top: -50px;
+}
+
+.buttonSet {
+    background-color: #ede210;
+    color: #fff;
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+
+}
+
+.buttonRemove {
+    background-color: #e62d2d;
+    color: #fff;
+    padding: 5px 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+}
+
+footer {
+    text-align: center;
+    font-style: italic;
+    color: #fff;
+    align-self: center;
+    padding: 50px;
 }
