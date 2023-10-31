@@ -10,7 +10,11 @@ function createCard(contact) {
         <h2>${contact.nome}</h2>
         <p>Telefone: ${contact.telefone}</p>
         <p>Email: ${contact.email}</p>
-        <button class="favorite-button">${contact.favorito ? 'Desfavoritar' : 'Favoritar'}</button>
+        <div class="gridButton">
+        <button class="favorite-button" id="favorite">${contact.favorito ? 'Desfavoritar' : 'Favoritar'}</button>
+        <button class="buttonSet" id="setCard">Editar</button>
+        <button class="buttonRemove" id="removeCard">Remover</button>
+        </div>
     `;
 
     cardContainer.appendChild(card);
@@ -20,7 +24,21 @@ function createCard(contact) {
     favoriteButton.addEventListener('click', () => {
         contact.favorito = !contact.favorito;
         favoriteButton.textContent = contact.favorito ? 'Desfavoritar' : 'Favoritar';
+
+        console.log(!contact.favorito)
+    
+        if(!contact.favorito){
+            favoriteButton.classList.remove('favorite-button-No')
+            favoriteButton.classList.add('favorite-button')
+            
+    
+        }else{
+            favoriteButton.classList.remove('favorite-button')
+            favoriteButton.classList.add('favorite-button-No')    
+        }
+
     });
+
 }
 
 // Função para carregar os dados da API usando fetch
@@ -37,11 +55,25 @@ async function loadContacts() {
     }
 }
 
-// Adicionar um evento ao botão "Adicionar Card"
-// const addButton = document.getElementById('addCard');
-// addButton.addEventListener('click', () => {
+//Adicionar um evento ao botão "Adicionar Card"
+const addButton = document.getElementById('addCard');
+addButton.addEventListener('click', () => {
+    // Você pode adicionar código para adicionar novos cards aqui
+    alert("Faça o código para adicionar um novo card...")
+});
+
+
+// const removeButton = document.getElementById('removeCard');
+// removeButton.addEventListener('click', () => {
 //     // Você pode adicionar código para adicionar novos cards aqui
-//     // Por exemplo, abrir um modal de entrada de dados
+//     alert("Faça o código para remover um novo card...")
+// });
+
+
+// const setButton = document.getElementById('setCard');
+// setButton.addEventListener('click', () => {
+//     // Você pode adicionar código para adicionar novos cards aqui
+//     alert("Faça o código para editar um novo card...")
 // });
 
 // Carregar os contatos da API ao carregar a página
