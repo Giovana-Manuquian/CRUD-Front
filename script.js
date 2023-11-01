@@ -13,7 +13,7 @@ function createCard(contact) {
         <div class="gridButton">
         <button class="favorite-button" id="favorite">${contact.favorito ? 'Desfavoritar' : 'Favoritar'}</button>
         <button class="buttonSet" id="setCard">Editar</button>
-        <button class="buttonRemove" id="removeCard">Remover</button>
+        <button class="buttonRemove" id="removeCard" onclick="removeCard('${contact.nome}')">Remover</button>
         </div>
     `;
 
@@ -63,18 +63,24 @@ addButton.addEventListener('click', () => {
 });
 
 
-// const removeButton = document.getElementById('removeCard');
-// removeButton.addEventListener('click', () => {
-//     // Você pode adicionar código para adicionar novos cards aqui
-//     alert("Faça o código para remover um novo card...")
-// });
+async function removeCard(nome) {
+    try {
+        await fetch(`http://127.0.0.1:8000/deletarContato/${nome}`, {
+            method: 'DELETE' // Especifique o método DELETE
+            //Reload a Tela
+        });
 
-
-// const setButton = document.getElementById('setCard');
-// setButton.addEventListener('click', () => {
-//     // Você pode adicionar código para adicionar novos cards aqui
-//     alert("Faça o código para editar um novo card...")
-// });
+        location.reload(true);
+        
+        console.log(`Contato ${nome} removido com sucesso.`);
+        // Se necessário, atualize a interface do usuário para refletir a remoção do contato
+        
+        
+    } catch (error) {
+        console.error('Ocorreu um erro na requisição:', error);
+    }
+    
+}
 
 // Carregar os contatos da API ao carregar a página
 loadContacts();
