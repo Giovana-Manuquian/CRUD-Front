@@ -55,20 +55,11 @@ async function loadContacts() {
     }
 }
 
-//Adicionar um evento ao botão "Adicionar Card"
-const addButton = document.getElementById('addCard');
-addButton.addEventListener('click', () => {
-    // Você pode adicionar código para adicionar novos cards aqui
-    alert("Faça o código para adicionar um novo card...")
-});
-
 
 async function removeCard(nome) {
     try {
 
         window.location.reload();
-        console.log("Feito Reload ...")
-        
         await fetch(`http://127.0.0.1:8000/deletarContato/${nome}`, {
             method: 'DELETE' // Especifique o método DELETE
             
@@ -77,11 +68,15 @@ async function removeCard(nome) {
         
     } catch (error) {
         console.error('Ocorreu um erro na requisição:', error);
-    }
-
-  
-    
+    }    
 }
+
+//Adicionar um evento ao botão "Adicionar Card"
+const addButton = document.getElementById('addCard');
+addButton.addEventListener('click', () => {
+    const cadastro = "./src/screens/cadastro.html"
+    window.location.href = cadastro    
+});
 
 // Carregar os contatos da API ao carregar a página
 loadContacts();
