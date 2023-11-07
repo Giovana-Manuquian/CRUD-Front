@@ -65,20 +65,21 @@ addButton.addEventListener('click', () => {
 
 async function removeCard(nome) {
     try {
+
+        window.location.reload();
+        console.log("Feito Reload ...")
+        
         await fetch(`http://127.0.0.1:8000/deletarContato/${nome}`, {
             method: 'DELETE' // Especifique o método DELETE
-            //Reload a Tela
-        });
-
-        location.reload(true);
-        
-        console.log(`Contato ${nome} removido com sucesso.`);
-        // Se necessário, atualize a interface do usuário para refletir a remoção do contato
+            
+        });   
         
         
     } catch (error) {
         console.error('Ocorreu um erro na requisição:', error);
     }
+
+  
     
 }
 
