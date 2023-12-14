@@ -1,60 +1,68 @@
 body {
-    font-family: Arial, sans-serif;
-    background-image: url("../src/imgs/img-1.jpg");
-    height: 90vh;
+    font-family: 'Arial', sans-serif;
+    background-image: url("../src/imgs/bg1.png");
+    background-size: cover; /* Adicionado para cobrir toda a área */
+    height: 100vh;
+    margin: 0;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    
 }
 
 .container {
     width: 90%;
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 40px; 
+    background-color: rgba(233, 231, 231, 0.9); 
+    border-radius: 10px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); 
 }
 
 .form-group {
-    margin: 20px;
+    margin: 20px 0; 
 }
 
 label {
     display: block;
     font-weight: bold;
+    margin-bottom: 5px; 
 }
 
 input[type="text"],
 input[type="email"],
 input[type="tel"] {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px; 
+    margin-top: 5px; 
+    border: 1px solid #aaa; 
+    border-radius: 8px; 
 }
 
-input[type="checkbox"] {
+*input[type="checkbox"] {
     margin-right: 5px;
 }
 
 input[type="file"] {
     margin-top: 10px;
-}
+}*
 
 button {
-    background-color: #007BFF;
+    background-color: #4a2836;
     color: #fff;
-    padding: 10px 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 12px 20px; 
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
-.buttons{
-    display: flex;
-    justify-content: space-around;
+button:hover{
+    background-color: #f6b5bc;
+    color: black;
 }
 
+.buttons {
+    display: grid;
+    gap: 10px;
+    justify-content: center; 
+}
